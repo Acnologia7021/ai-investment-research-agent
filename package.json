@@ -1,0 +1,37 @@
+{
+  "name": "ai-investment-research-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI Investment Research Agent for the InsideIIM x Altuni AI Labs assignment.",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:backend dev:frontend",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:backend": "npm --workspace backend run dev",
+    "typecheck": "npm-run-all typecheck:*",
+    "typecheck:frontend": "npm --workspace frontend run typecheck",
+    "typecheck:backend": "npm --workspace backend run typecheck",
+    "lint": "npm-run-all lint:*",
+    "lint:frontend": "npm --workspace frontend run lint",
+    "lint:backend": "npm --workspace backend run lint",
+    "test": "npm-run-all test:*",
+    "test:frontend": "npm --workspace frontend run test -- --run",
+    "test:backend": "npm --workspace backend run test -- --run",
+    "build": "npm-run-all build:*",
+    "build:frontend": "npm --workspace frontend run build",
+    "build:backend": "npm --workspace backend run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.0",
+    "eslint": "^9.30.0",
+    "npm-run-all": "^4.1.5",
+    "typescript-eslint": "^8.35.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
