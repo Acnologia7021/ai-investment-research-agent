@@ -50,6 +50,35 @@ VITE_API_BASE_URL=http://localhost:4000/api
 
 Do not commit real API keys.
 
+## Vercel Deployment
+
+This repo uses Vercel Services from the root `vercel.json` to deploy the Vite frontend and Express backend in one project/domain.
+
+Project settings:
+
+```text
+Framework Preset: Other
+Root Directory: leave empty
+Node.js Version: 24.x
+```
+
+Do not set the root directory to `frontend`; Vercel needs the repository root so it can deploy both services.
+
+Production environment variables in Vercel:
+
+```env
+NODE_ENV=production
+LOG_LEVEL=info
+GEMINI_API_KEY=your_actual_key
+GEMINI_MODEL=gemini-2.5-flash
+FINNHUB_API_KEY=your_actual_key
+FINNHUB_BASE_URL=https://finnhub.io/api/v1
+TAVILY_API_KEY=your_actual_key
+VITE_API_BASE_URL=/api
+```
+
+After deploy, verify the backend at `/api/health`.
+
 ## Architecture
 
 ```text
